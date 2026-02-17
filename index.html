@@ -3,141 +3,264 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pressurized Water Reactor - Nuclear Power Plant</title>
+<title>Pressurized Water Reactor | Nuclear Energy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
-body {
+
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0b1a2b;
-    color: #ffffff;
-    line-height: 1.6;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header {
-    background: linear-gradient(to right, #001f3f, #003366);
-    padding: 40px;
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #f4f6f9;
+    color: #222;
+    line-height: 1.7;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    background: white;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+nav h2 {
+    color: #004aad;
+}
+
+nav a {
+    text-decoration: none;
+    margin-left: 25px;
+    color: #333;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #004aad;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(to right, #002855, #004aad);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10%;
     text-align: center;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 40px;
-}
-
-section {
-    padding: 60px 10%;
-    border-bottom: 1px solid #1f3b5c;
-}
-
-h2 {
-    color: #00ccff;
+.hero h1 {
+    font-size: 48px;
     margin-bottom: 20px;
 }
 
-img {
-    width: 100%;
+.hero p {
+    font-size: 20px;
     max-width: 700px;
-    display: block;
-    margin: 20px auto;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 204, 255, 0.4);
+}
+
+.section {
+    padding: 120px 10%;
+}
+
+.section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    color: #004aad;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    margin-bottom: 15px;
+    color: #002855;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 300px;
+    background: #dde3ec;
+    border-radius: 12px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+    font-weight: 600;
 }
 
 footer {
+    background: #002855;
+    color: white;
     text-align: center;
-    padding: 30px;
-    background-color: #001a33;
-    font-size: 14px;
+    padding: 40px;
 }
+
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Pressurized Water Reactor (PWR)</h1>
-    <p>How a Nuclear Power Plant Generates Electricity</p>
-</header>
+<nav>
+    <h2>PWR Reactor</h2>
+    <div>
+        <a href="#overview">Overview</a>
+        <a href="#reactor">Reactor</a>
+        <a href="#steam">Steam Generator</a>
+        <a href="#energy">Energy Conversion</a>
+        <a href="#safety">Safety</a>
+    </div>
+</nav>
 
-<section>
-    <h2>Introduction to Nuclear Power</h2>
+<div class="hero">
+    <h1>Pressurized Water Reactor</h1>
     <p>
-        A nuclear power plant generates electricity using nuclear fission rather than burning fossil fuels.
-        In a Pressurized Water Reactor (PWR), nuclear energy is converted into thermal energy,
-        then mechanical energy, and finally electrical energy.
+        A detailed exploration of how nuclear fission is controlled and transformed
+        into reliable electrical energy using advanced reactor engineering.
     </p>
+</div>
+
+<section class="section" id="overview">
+    <h2>Overview of Nuclear Power Generation</h2>
+    <p>
+        A Pressurized Water Reactor (PWR) is the most widely used type of nuclear reactor worldwide.
+        It operates by using nuclear fission to generate heat inside a reactor core.
+        This heat is transferred through a primary coolant system to produce steam,
+        which drives a turbine connected to an electrical generator.
+    </p>
+    <div class="image-placeholder">Add Nuclear Plant Overview Image Here</div>
 </section>
 
-<section>
-    <h2>Nuclear Fission Process</h2>
-    <p>
-        Uranium-235 fuel undergoes nuclear fission when struck by a slow neutron.
-        The nucleus splits into smaller nuclei, releasing heat energy,
-        additional neutrons, and radiation.
-        The neutrons sustain a controlled chain reaction inside the reactor core.
-    </p>
-    <img src="images/reactor-core.jpg" alt="Reactor Core">
+<section class="section" id="reactor">
+    <h2>Reactor Core and Primary System</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>Nuclear Fission</h3>
+            <p>
+                Uranium-235 nuclei absorb slow neutrons and split into smaller nuclei,
+                releasing energy, additional neutrons, and radiation.
+                The reaction is carefully controlled to maintain steady power output.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Fuel and Control Rods</h3>
+            <p>
+                Fuel rods contain uranium pellets enclosed in zirconium alloy.
+                Control rods made of boron or cadmium absorb excess neutrons
+                to regulate the chain reaction and prevent overheating.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Primary Coolant Loop</h3>
+            <p>
+                High-pressure water (~150 atmospheres) circulates through the core.
+                It removes heat while remaining in liquid form,
+                then transfers this heat to the steam generator.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="image-placeholder">Add Reactor & Primary Loop Image Here</div>
 </section>
 
-<section>
-    <h2>Primary Coolant System</h2>
-    <p>
-        High-pressure water circulates through the reactor core to absorb heat.
-        The water is maintained at approximately 150 atmospheres,
-        preventing it from boiling even above 300°C.
-        This radioactive water flows through thick pipes to the steam generator.
-    </p>
-    <img src="images/primary-loop.jpg" alt="Primary Coolant Loop">
-</section>
-
-<section>
+<section class="section" id="steam">
     <h2>Steam Generator (Heat Exchanger)</h2>
+
     <p>
-        The steam generator transfers heat from the radioactive primary loop
-        to a separate non-radioactive secondary loop.
-        Thousands of metal tubes allow heat transfer by conduction,
-        while preventing the two water systems from mixing.
-        The secondary water turns into steam, which drives the turbine.
+        The steam generator is a critical safety feature of the PWR design.
+        It separates the radioactive primary loop from the clean secondary loop.
+        Heat transfers through thousands of metal tubes without mixing the two water systems.
+        The secondary water undergoes a phase change into high-pressure steam.
     </p>
-    <img src="images/steam-generator.jpg" alt="Steam Generator">
+
+    <div class="image-placeholder">Add Steam Generator Cutaway Image Here</div>
 </section>
 
-<section>
-    <h2>Steam Turbine and Generator</h2>
-    <p>
-        High-pressure steam expands through the turbine,
-        converting thermal energy into mechanical rotational energy.
-        The turbine shaft spins an electric generator,
-        which produces alternating current through electromagnetic induction.
-    </p>
-    <img src="images/turbine.jpg" alt="Steam Turbine">
+<section class="section" id="energy">
+    <h2>Energy Conversion Process</h2>
+
+    <div class="card-container">
+
+        <div class="card">
+            <h3>Steam Turbine</h3>
+            <p>
+                High-pressure steam expands across turbine blades,
+                converting thermal energy into mechanical rotational energy.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Electric Generator</h3>
+            <p>
+                The turbine shaft spins a generator.
+                Through electromagnetic induction,
+                mechanical energy becomes electrical energy.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Condenser & Cooling</h3>
+            <p>
+                Exhaust steam is cooled and condensed back into water.
+                A third cooling loop transfers excess heat to the cooling tower,
+                maintaining system efficiency.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="image-placeholder">Add Turbine & Cooling System Image Here</div>
 </section>
 
-<section>
-    <h2>Condenser and Cooling System</h2>
-    <p>
-        After passing through the turbine, steam enters the condenser,
-        where cooling water removes excess heat and converts it back into liquid.
-        A third independent cooling loop transfers heat to the cooling tower,
-        which releases water vapor into the atmosphere.
-    </p>
-    <img src="images/condenser.jpg" alt="Condenser">
-    <img src="images/cooling-tower.jpg" alt="Cooling Tower">
-</section>
+<section class="section" id="safety">
+    <h2>Safety Systems and Containment</h2>
 
-<section>
-    <h2>Safety Systems</h2>
     <p>
-        The reactor is enclosed in a reinforced containment structure.
-        Control rods regulate the chain reaction,
-        and emergency cooling systems ensure reactor stability.
-        The separation of three water loops ensures radioactive materials remain contained.
+        PWR reactors are designed with multiple redundant safety systems.
+        The reactor is enclosed within a reinforced containment building.
+        Emergency Core Cooling Systems (ECCS),
+        automatic shutdown mechanisms (SCRAM),
+        and radiation monitoring systems ensure safe operation.
+        The separation of three independent water loops prevents radioactive contamination.
     </p>
+
+    <div class="image-placeholder">Add Containment Structure Image Here</div>
 </section>
 
 <footer>
-    Nuclear Power Plant Project - Pressurized Water Reactor
+    Nuclear Power Plant Engineering Project | Pressurized Water Reactor
 </footer>
 
 </body>
