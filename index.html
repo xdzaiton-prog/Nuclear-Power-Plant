@@ -10,15 +10,13 @@
 <style>
 
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
 body{
     font-family:'Outfit',sans-serif;
     background:#f5f8ff;
     color:#1a1a1a;
-    overflow-x:hidden;
 }
 
-/* NAVIGATION */
+/* NAV */
 nav{
     position:fixed;
     width:100%;
@@ -27,21 +25,18 @@ nav{
     justify-content:space-between;
     align-items:center;
     backdrop-filter:blur(15px);
-    background:rgba(255,255,255,0.75);
-    border-bottom:1px solid rgba(0,0,0,0.05);
+    background:rgba(255,255,255,0.85);
     z-index:1000;
 }
 nav h2{color:#0b3d91;}
 nav a{
-    text-decoration:none;
     margin-left:30px;
-    font-weight:500;
+    text-decoration:none;
     color:#333;
-    transition:0.3s;
+    font-weight:500;
 }
-nav a:hover{color:#0b3d91;}
 
-/* HERO SECTION */
+/* HERO */
 .hero{
     height:100vh;
     display:flex;
@@ -62,13 +57,11 @@ nav a:hover{color:#0b3d91;}
     100%{background-position:0% 50%;}
 }
 .hero h1{font-size:60px;margin-bottom:20px;}
-.hero p{font-size:20px;max-width:850px;}
 
-/* FLOATING PARTICLES */
+/* PARTICLES */
 .particle{
     position:absolute;
-    width:4px;
-    height:4px;
+    width:4px;height:4px;
     background:white;
     border-radius:50%;
     opacity:0.4;
@@ -79,51 +72,42 @@ nav a:hover{color:#0b3d91;}
     to{transform:translateY(-10vh);}
 }
 
-/* SECTIONS */
-section{
-    padding:130px 10%;
+/* SECTION LAYOUT */
+.section{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:120px 10%;
+    gap:60px;
 }
-section h2{
-    font-size:40px;
+
+.section:nth-child(even){
+    background:#eef4ff;
+}
+
+.text{
+    flex:1;
+}
+
+.text h2{
+    font-size:36px;
     margin-bottom:20px;
     color:#0b3d91;
-    position:relative;
-}
-section h2::after{
-    content:"";
-    width:80px;
-    height:4px;
-    background:#0077ff;
-    position:absolute;
-    left:0;
-    bottom:-10px;
-    border-radius:2px;
 }
 
-.content{
-    max-width:950px;
-    margin:40px 0;
+.text p{
     font-size:18px;
+    line-height:1.8;
 }
 
-.highlight{
-    background:#e9f2ff;
-    padding:25px;
-    border-left:5px solid #0077ff;
-    border-radius:12px;
-    margin-top:30px;
+.image{
+    flex:1;
 }
 
-/* IMAGE STYLE */
-.image-box{
-    border-radius:25px;
-    overflow:hidden;
-    box-shadow:0 30px 60px rgba(0,0,0,0.1);
-    margin-top:40px;
-}
-.image-box img{
+.image img{
     width:100%;
-    display:block;
+    border-radius:20px;
+    box-shadow:0 30px 60px rgba(0,0,0,0.1);
 }
 
 /* FOOTER */
@@ -132,6 +116,13 @@ footer{
     color:white;
     text-align:center;
     padding:60px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    .section{
+        flex-direction:column;
+    }
 }
 
 </style>
@@ -143,10 +134,8 @@ footer{
   <h2>PWR Reactor</h2>
   <div>
     <a href="#reactor">Reactor</a>
-    <a href="#primary">Primary Loop</a>
-    <a href="#steam">Steam Generator</a>
-    <a href="#turbine">Turbine</a>
-    <a href="#condenser">Condenser</a>
+    <a href="#steam">Steam</a>
+    <a href="#energy">Energy</a>
     <a href="#cooling">Cooling</a>
   </div>
 </nav>
@@ -155,15 +144,13 @@ footer{
   <div>
     <h1>Pressurized Water Reactor</h1>
     <p>
-      A high-efficiency nuclear system converting controlled fission
-      into electrical power through the Rankine thermodynamic cycle,
-      neutron moderation, and multi-layered safety engineering.
+      Converting nuclear fission into reliable electrical power
+      through controlled neutron physics and thermodynamic cycles.
     </p>
   </div>
 </div>
 
 <script>
-/* FLOATING PARTICLES */
 for(let i=0;i<50;i++){
   let p=document.createElement("div");
   p.className="particle";
@@ -173,98 +160,84 @@ for(let i=0;i<50;i++){
 }
 </script>
 
-<section id="reactor">
-<h2>Reactor Core & Neutron Physics</h2>
-<div class="content">
-Uranium-235 undergoes neutron-induced fission, releasing approximately 200 MeV of energy per reaction.
-The reactor operates at criticality (k-effective = 1), meaning neutron production equals neutron losses.
-Water acts as a moderator, slowing neutrons to thermal energies and increasing fission probability.
-Control rods absorb excess neutrons to maintain stable reactor power levels.
+<div class="section" id="reactor">
+  <div class="text">
+    <h2>Reactor Core & Neutron Physics</h2>
+    <p>
+      Uranium-235 undergoes neutron-induced fission releasing ~200 MeV per reaction.
+      The reactor operates at criticality (k-effective = 1).
+      Water moderates neutrons while control rods regulate flux to maintain stable output.
+    </p>
+  </div>
+  <div class="image">
+    <img src="reactor.png">
+  </div>
 </div>
 
-<div class="highlight">
-Mass-to-energy conversion during fission follows Einstein’s equation E = mc²,
-allowing immense energy release from small mass differences.
+<div class="section">
+  <div class="image">
+    <img src="primary-loop.png">
+  </div>
+  <div class="text">
+    <h2>Primary Coolant System</h2>
+    <p>
+      High-pressure water (~150 atm) circulates at temperatures exceeding 300°C.
+      The pressurizer stabilizes pressure while pumps maintain forced circulation.
+    </p>
+  </div>
 </div>
 
-<div class="image-box">
-<img src="reactor.png" alt="Reactor Core">
-</div>
-</section>
-
-<section id="primary">
-<h2>Primary Coolant System</h2>
-<div class="content">
-The primary loop circulates pressurized water at approximately 150 atmospheres and temperatures above 300°C.
-This prevents boiling while enabling efficient heat removal.
-Reactor coolant pumps maintain circulation, and the pressurizer stabilizes pressure variations.
-The entire loop is radioactive and fully contained within engineered barriers.
-</div>
-
-<div class="image-box">
-<img src="primary-loop.png" alt="Primary Loop">
-</div>
-</section>
-
-<section id="steam">
-<h2>Steam Generator & Heat Transfer</h2>
-<div class="content">
-The steam generator is a shell-and-tube heat exchanger.
-Primary coolant transfers thermal energy through alloy tubes to the secondary loop.
-The two water systems never mix, ensuring radiological safety.
-Secondary water undergoes phase transition, producing high-pressure steam.
+<div class="section" id="steam">
+  <div class="text">
+    <h2>Steam Generator</h2>
+    <p>
+      A shell-and-tube heat exchanger isolates radioactive primary coolant.
+      Secondary water undergoes phase change to drive the Rankine cycle.
+    </p>
+  </div>
+  <div class="image">
+    <img src="steam.png">
+  </div>
 </div>
 
-<div class="highlight">
-This supports the Rankine Cycle: water is vaporized, expanded through a turbine,
-condensed, and recirculated to continuously generate mechanical work.
+<div class="section">
+  <div class="image">
+    <img src="turbine.png">
+  </div>
+  <div class="text">
+    <h2>Turbine & Generator</h2>
+    <p>
+      Steam expansion rotates turbine blades.
+      Mechanical energy converts into electrical energy via electromagnetic induction.
+    </p>
+  </div>
 </div>
 
-<div class="image-box">
-<img src="steam.png" alt="Steam Generator">
-</div>
-</section>
-
-<section id="turbine">
-<h2>Steam Turbine & Electrical Generation</h2>
-<div class="content">
-High-pressure steam expands through turbine stages,
-converting thermal energy into rotational mechanical energy.
-The turbine shaft drives a synchronous generator,
-producing alternating current via electromagnetic induction.
-</div>
-
-<div class="image-box">
-<img src="turbine.png" alt="Turbine">
-</div>
-</section>
-
-<section id="condenser">
-<h2>Condenser & Vacuum Efficiency</h2>
-<div class="content">
-Exhaust steam enters the condenser under vacuum conditions,
-increasing thermodynamic efficiency.
-Cooling water removes latent heat and condenses steam back to liquid form,
-allowing closed-loop secondary circulation.
+<div class="section">
+  <div class="text">
+    <h2>Condenser</h2>
+    <p>
+      Exhaust steam condenses under vacuum conditions,
+      increasing thermodynamic efficiency and enabling closed-loop operation.
+    </p>
+  </div>
+  <div class="image">
+    <img src="condenser.png">
+  </div>
 </div>
 
-<div class="image-box">
-<img src="condenser.png" alt="Condenser">
+<div class="section" id="cooling">
+  <div class="image">
+    <img src="cooling-tower.png">
+  </div>
+  <div class="text">
+    <h2>Cooling Tower</h2>
+    <p>
+      A third cooling loop dissipates waste heat via evaporative cooling.
+      The visible plume consists of condensed water vapor.
+    </p>
+  </div>
 </div>
-</section>
-
-<section id="cooling">
-<h2>Cooling Tower & Heat Rejection</h2>
-<div class="content">
-A third independent cooling loop transfers waste heat to the cooling tower.
-Heat is dissipated through evaporative cooling.
-The visible plume consists of condensed water vapor, not smoke.
-</div>
-
-<div class="image-box">
-<img src="cooling-tower.png" alt="Cooling Tower">
-</div>
-</section>
 
 <footer>
 Advanced Nuclear Engineering Project | Pressurized Water Reactor
